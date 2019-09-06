@@ -1,18 +1,21 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import ProductOverviewScreen from '../screens/shop/ProductOverviewScreen';
+import Colors from '../constants/Colors';
+import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
 
 
 const ProductNavigator = createStackNavigator(
     {
-        ProductsOverview: ProductOverviewScreen
+        ProductsOverview: ProductOverviewScreen,
+        ProductDetail: ProductDetailScreen,
     },
     {
         defaultNavigationOptions: {
             headerStyle: {
-                backgroundColor: 'white'
+                backgroundColor: Colors.primary
             },
-            headerTintColor: 'black'
+            headerTintColor: 'white'
         }
     }
 );
