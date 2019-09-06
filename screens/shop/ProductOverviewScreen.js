@@ -5,6 +5,7 @@ import ProductItem from '../../components/shop/ProductItem';
 import * as cartAction from '../../store/actions/cart';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../../components/UI/CustomHeaderButton';
+
 const ProductOverviewScreen = (props) => {
     const products = useSelector(state => state.products.availableProducts);
     const dispatch = useDispatch();
@@ -24,7 +25,6 @@ const ProductOverviewScreen = (props) => {
                 }}
                 onAddToCart={() => {
                     //check if its working
-                    console.log(itemData.item)
                     dispatch(cartAction.addToCart(itemData.item))
                 }}
             />}
@@ -43,6 +43,15 @@ ProductOverviewScreen.navigationOptions = navData =>{
                     onPress={() => navData.navigation.navigate('Cart')}
                 />
             </HeaderButtons>
+        ),
+        headerLeft: (
+            <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+                <Item 
+                    title="menu" 
+                    iconName="md-menu"
+                    onPress={() => navData.navigation.toggleDrawer()}
+                />
+            </HeaderButtons>            
         )
     }
 }

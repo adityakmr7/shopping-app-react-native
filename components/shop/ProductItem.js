@@ -10,7 +10,7 @@ const ProductItem = (props) => {
             </View>
             <View style={styles.detail}>
                 <Text style={styles.title}>{props.title}</Text>
-                <Text style={styles.price}>{props.price}</Text>
+                <Text style={styles.price}>${props.price}</Text>
             </View>
             <View style={styles.actions}>
                 <Button 

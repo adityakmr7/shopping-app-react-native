@@ -6,10 +6,13 @@ import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import productReducer from './store/reducers/product';
 import cartReducer from './store/reducers/cart';
+import orderReducer from './store/reducers/order';
+
 
 const rootReducer = combineReducers({
   products: productReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  orders: orderReducer
 });
 
 
