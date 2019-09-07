@@ -9,6 +9,7 @@ import OrderScreen from '../screens/shop/OrdersScreen';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import UserProductsScreen from '../screens/user/UserProductsScreen';
 import { Ionicons } from '@expo/vector-icons';
+import EditProductScreen from '../screens/user/EditProductScreen';
 
 
 const defaultConfig = {
@@ -60,7 +61,8 @@ const OrderNavigator = createStackNavigator(
 
 const AdminNavigator = createStackNavigator(
     {
-        UserProduct: UserProductsScreen
+        UserProduct: UserProductsScreen,
+        EditProduct: EditProductScreen,
     },{
         navigationOptions: {
             drawerIcon: drawerConfig => (
