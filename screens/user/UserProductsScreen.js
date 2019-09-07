@@ -37,7 +37,7 @@ const UserProductsScreen = (props) => {
                         color={Colors.primary}
                         title="Delete"
                         onPress={() => {
-                            //TODO: something is wrong with this button
+                            
                             dispatch(productActions.deleteProduct(
                                 itemData.item.id
                             ));
@@ -67,6 +67,17 @@ UserProductsScreen.navigationOptions = navData => {
             iconName={ 'md-menu'}
             onPress={() => {
               navData.navigation.toggleDrawer();
+            }}
+          />
+        </HeaderButtons>
+      ),
+      headerRight: (
+        <HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+          <Item
+            title="create"
+            iconName={ 'md-create'}
+            onPress={() => {
+              navData.navigation.navigate('EditProduct');
             }}
           />
         </HeaderButtons>
