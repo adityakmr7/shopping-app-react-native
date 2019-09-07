@@ -3,6 +3,7 @@ import { View,Text, StyleSheet, FlatList } from 'react-native';
 import {useSelector} from 'react-redux';
 import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../../components/UI/CustomHeaderButton';
+import OrderItem from '../../components/shop/OrderItem';
 
 const OrderScreen = (props) => {
     const getAllOrder = useSelector(state => state.orders.orders);
@@ -12,7 +13,11 @@ const OrderScreen = (props) => {
             data={getAllOrder}
             keyExtractor={item => item.id}
             renderItem={itemData => (
-                <Text>{itemData.item.totalAmount}</Text>
+                <OrderItem
+                    amount={itemData.item.totalAmount}
+                    date={itemData.item.readableDate}
+                    items={itemData.item.items}
+                />
             )}
         />
     );
